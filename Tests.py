@@ -18,24 +18,12 @@ def Select_Folder():
         print(f"Selected: {Selected_Folder}")
     return Selected_Folder
         
+def Fetch_Data(URL):
+    return YouTube(URL)
 
 
 if __name__ == "__main__":
-    print("Welcome to the Vidownloader!!")
-    root = tk.Tk()
-    root.withdraw()
-    Running = True
-    while(Running):
-        Video_URL = input("Enter video URL: ")
-        if Video_URL.lower() in ("q", "e", "quit", "exit"):
-            print("Ok, exiting :)")
-            Running = False
-            break
-        Save_To = Select_Folder()
-        if Save_To:
-            print("Downloading...")
-            Download_Vid(Video_URL, Save_To)
-        else:
-            print("Nah")
+    Input_URL = input("URL input: ")
+    print(Fetch_Data(Input_URL).title)
 
 # cls && python c:\Projects\Vidownload\Base.py
