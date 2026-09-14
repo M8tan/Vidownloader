@@ -4,14 +4,11 @@ from tkinter import filedialog
 
 def Download_Vid(URL, Path):
     try:
-        yt = YouTube(URL, client='WEB')
-        print(yt.streams)
-        ys = yt.streams.filter(progressive=True, file_extension="mp4").get_highest_resolution()
-        if ys is None:
-            print("Could not find a suitable stream")
-            return
-        ys.download(output_path=Path)
-        print(f"Video {yt.title} downloaded successfully!")
+        yt = YouTube(URL)
+        streams = yt.streams.filter(progressive=True, file_extension="mp4")
+        highest_res_stream = streams.get_highest_resolution()
+        highest_res_stream.download(output_path=Path)
+        print("Video downloaded successfully!")
     except Exception as e:
         print(f"Error while downloading video: {e}")
 
@@ -41,3 +38,4 @@ if __name__ == "__main__":
         else:
             print("Nah")
 
+# cls && python c:\Projects\Vidownload\Base.py
