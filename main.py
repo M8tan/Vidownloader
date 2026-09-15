@@ -39,5 +39,5 @@ if __name__ == "__main__":
             print("Downloading...")
             Download_Vid(Video_URL, Save_To)
         else:
-            print("Nah")
+            print("No output path selected")
 
