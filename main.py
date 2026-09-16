@@ -18,10 +18,9 @@ def Download_Vid(URL, Path):
 def Select_Folder():
     Selected_Folder = filedialog.askdirectory()
     if Selected_Folder:
-        print(f"Selected: {Selected_Folder}")
-    return Selected_Folder
+        return Selected_Folder
+    return None
         
-
 
 if __name__ == "__main__":
     print("Welcome to the Vidownloader!!")
@@ -36,7 +35,7 @@ if __name__ == "__main__":
             break
         Save_To = Select_Folder()
         if Save_To:
-            print("Downloading...")
+            print(f"Downloading to {Save_To}...")
             Download_Vid(Video_URL, Save_To)
         else:
             print("No output path selected")
