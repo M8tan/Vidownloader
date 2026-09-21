@@ -10,3 +10,6 @@ To use it, clone the repo and double click *Run.bat*
 
 ### How it works
 
+### Requirements
+
+You need to have **Python** installed on your computer, including **Pip** and it is also useful to have **Git**.
